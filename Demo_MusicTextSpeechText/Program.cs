@@ -18,17 +18,24 @@ namespace Demo_MusicTextSpeechText
 
             while (running)
             {
-                
+
             }
 
         }
 
+        /// <summary>
+        /// demonstration of SoundPlayer class Play methods
+        /// </summary>
         static void PlayMusic()
         {
-            using (SoundPlayer scaryMusic = new SoundPlayer(@"Media\scary-suspense.wav"))
-            {
-                scaryMusic.PlaySync();
-            }
+            SoundPlayer scaryMusic = new SoundPlayer(@"Media\scary-suspense.wav");
+
+            scaryMusic.Play(); // new thread created
+            //scaryMusic.PlaySync(); // runs in existing thread, app waits for music to finish
+            //scaryMusic.PlayLooping(); // new thread created
+
+            Console.WriteLine("Hello NMC!");
+            Console.ReadKey();
         }
     }
 }
