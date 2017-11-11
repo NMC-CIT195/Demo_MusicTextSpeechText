@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_MusicTextSpeechText", "Demo_MusicTextSpeechText\Demo_MusicTextSpeechText.csproj", "{1EEC2C72-A14A-4C18-89A6-EEB2513DA47B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_PlayMusic", "Demo_MusicTextSpeechText\Demo_PlayMusic.csproj", "{1EEC2C72-A14A-4C18-89A6-EEB2513DA47B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_SpeechRecognition", "Demo_SpeechRecognition\Demo_SpeechRecognition.csproj", "{CC1D570A-BF02-4718-A811-7DD25477E0B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_TextToSpeech", "Demo_TextToSpeech\Demo_TextToSpeech.csproj", "{A16ED890-3C95-49BA-8E00-812C29DCA543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{1EEC2C72-A14A-4C18-89A6-EEB2513DA47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EEC2C72-A14A-4C18-89A6-EEB2513DA47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EEC2C72-A14A-4C18-89A6-EEB2513DA47B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1D570A-BF02-4718-A811-7DD25477E0B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1D570A-BF02-4718-A811-7DD25477E0B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1D570A-BF02-4718-A811-7DD25477E0B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1D570A-BF02-4718-A811-7DD25477E0B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A16ED890-3C95-49BA-8E00-812C29DCA543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A16ED890-3C95-49BA-8E00-812C29DCA543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A16ED890-3C95-49BA-8E00-812C29DCA543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A16ED890-3C95-49BA-8E00-812C29DCA543}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CFC831C-26FF-4957-8C55-A1335A41F901}
 	EndGlobalSection
 EndGlobal
