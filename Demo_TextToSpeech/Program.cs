@@ -118,6 +118,9 @@ namespace Demo_MusicTextSpeechText
                     Console.Clear();
                     Console.SetCursorPosition(0, 0);
                     Console.Write("Quit!");
+                    //
+                    // fix bug requiring two consecutive "quit" commands
+                    //
                     recongnitionComplete.Set();
                     break;
 
