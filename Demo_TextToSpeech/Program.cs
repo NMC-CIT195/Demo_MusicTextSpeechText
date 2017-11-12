@@ -46,7 +46,6 @@ namespace Demo_MusicTextSpeechText
             recognizer.RecognizeAsync(RecognizeMode.Multiple);
 
             recongnitionComplete.WaitOne();
-            recongnitionComplete.Set();
             recognizer.Dispose();
         }
 
