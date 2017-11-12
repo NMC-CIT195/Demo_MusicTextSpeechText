@@ -11,10 +11,16 @@ namespace Demo_MusicTextSpeechText
 {
     class Program
     {
-        static ManualResetEvent recongnitionComplete = null;
+        static ManualResetEvent recongnitionComplete;
+        static int rowPosition = 10;
+        static int columnPosition = 30;
+        static int ROW_INCREMENT = 1;
+        static int COLUMN_INCREMENT = 1;
 
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
+
             SpeechRecognition();
         }
 
@@ -31,6 +37,8 @@ namespace Demo_MusicTextSpeechText
             //
             // load grammar elements
             //
+            recognizer.LoadGrammar(new Grammar(new GrammarBuilder("appear")));
+            recognizer.LoadGrammar(new Grammar(new GrammarBuilder("disappear")));
             recognizer.LoadGrammar(new Grammar(new GrammarBuilder("up")));
             recognizer.LoadGrammar(new Grammar(new GrammarBuilder("down")));
             recognizer.LoadGrammar(new Grammar(new GrammarBuilder("right")));
@@ -56,36 +64,71 @@ namespace Demo_MusicTextSpeechText
         /// <param name="e"></param>
         static void RecognizerSpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
+            Console.CursorVisible = false;
+
             switch (e.Result.Text)
             {
+                case "appear":
+                    Console.Clear();
+                    Console.SetCursorPosition(columnPosition, rowPosition);
+                    Console.Write("+");
+                    break;
+
+                case "disappear":
+                    Console.Clear();
+                    break;
+
                 case "up":
                     Console.Clear();
+                    rowPosition -= ROW_INCREMENT;
+                    Console.SetCursorPosition(columnPosition, rowPosition);
+                    Console.Write("+");
                     Console.SetCursorPosition(0, 0);
                     Console.Write("Up!");
                     break;
+
                 case "down":
                     Console.Clear();
+                    rowPosition += ROW_INCREMENT;
+                    Console.SetCursorPosition(columnPosition, rowPosition);
+                    Console.Write("+");
                     Console.SetCursorPosition(0, 0);
                     Console.Write("Down!");
                     break;
+
                 case "right":
                     Console.Clear();
+                    columnPosition += COLUMN_INCREMENT;
+                    Console.SetCursorPosition(columnPosition, rowPosition);
+                    Console.Write("+");
                     Console.SetCursorPosition(0, 0);
                     Console.Write("Right!");
                     break;
+
                 case "left":
                     Console.Clear();
+                    columnPosition -= COLUMN_INCREMENT;
+                    Console.SetCursorPosition(columnPosition, rowPosition);
+                    Console.Write("+");
                     Console.SetCursorPosition(0, 0);
                     Console.Write("Left!");
                     break;
+
                 case "quit":
                     Console.Clear();
+                    Console.SetCursorPosition(0, 0);
                     Console.Write("Quit!");
                     recongnitionComplete.Set();
                     break;
+
                 default:
                     break;
             }
+        }
+
+        static void MoveOnScreen()
+        {
+
         }
     }
 }
